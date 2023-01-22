@@ -1,6 +1,8 @@
 
 import 'package:booking_app/screens/hotel_screen.dart';
 import 'package:booking_app/screens/ticket_view.dart';
+import 'package:booking_app/utils/app_info_list.dart';
+import 'package:booking_app/utils/app_layout.dart';
 import 'package:booking_app/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 40,
+                  height: AppLayout.getHeight(40),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,8 +39,8 @@ class HomeScreen extends StatelessWidget {
                    ),
 
                     Container(
-                      height: 50,
-                      width: 50,
+                      height: AppLayout.getHeight(50),
+                      width: AppLayout.getWidth(20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
@@ -52,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 25,
+                  height: AppLayout.getHeight(25),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -68,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height:40 ,
+                  height:AppLayout.getHeight(40) ,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,21 +87,16 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ) ,
-         SizedBox(height: 15,),
+         SizedBox(height:AppLayout.getHeight(15),),
          SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.only(left: 20),
           child: Row(
-            children: [
-              TicketView(),
-              TicketView(),
-
-
-            ],
+            children:ticketList.map((singleTicket) => TicketView(ticket:singleTicket)).toList(),
           ),
          ),
        SizedBox(
-        height: 15,
+        height: AppLayout.getHeight(15),
        ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -117,20 +114,15 @@ class HomeScreen extends StatelessWidget {
                   ),
         ),
         SizedBox(
-          height: 15,
+          height: AppLayout.getHeight(15),
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.only(left: 20),
           child: Row(
-            children: [
-              HotelScreen(),
-              HotelScreen(),
-               HotelScreen(),
-              HotelScreen(),
-
-
-            ],
+            children: hotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList()
+            
+  
           ),
          ),
         ],

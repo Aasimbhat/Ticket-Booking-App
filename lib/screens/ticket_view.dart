@@ -1,11 +1,19 @@
 
 import 'package:booking_app/screens/thick_container.dart';
+import 'package:booking_app/utils/app_info_list.dart';
 import 'package:booking_app/utils/app_layout.dart';
 import 'package:booking_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class TicketView extends StatefulWidget {
+
+  //  final Map<String,dynamic>ticket;
+
+  // const TicketView({Key? key,required this.ticket}) : super(key: key);
   @override
+  final Map<String,dynamic>ticket;
+
+  const TicketView({Key? key,required this.ticket}) : super(key: key);
   State<TicketView> createState() => _TicketViewState();
 }
 
@@ -16,18 +24,18 @@ class _TicketViewState extends State<TicketView> {
 
     return SizedBox(
       width: size.width*0.88,
-      height: 200,
+      height: AppLayout.getHeight(200),
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin:  EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
           children: [
             Container(
               decoration: BoxDecoration(
                   color: const Color(0xff526799),
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(21),
-                      topRight: Radius.circular(21))),
-              padding: const EdgeInsets.all(16),
+                      topLeft: Radius.circular(AppLayout.getHeight(21)),
+                      topRight: Radius.circular(AppLayout.getHeight(21)))),
+              padding:  EdgeInsets.all(AppLayout.getHeight(16)),
               child: Column(
                 children: [
                   Row(
@@ -41,7 +49,7 @@ class _TicketViewState extends State<TicketView> {
                           child: Stack(
                         children: [
                           SizedBox(
-                            height: 24,
+                            height: AppLayout.getHeight(24),
                             child: LayoutBuilder(
                               builder: (BuildContext context,
                                   BoxConstraints constraints) {
@@ -76,7 +84,7 @@ class _TicketViewState extends State<TicketView> {
                       ThickContainer(),
                       Expanded(child: Container()),
                      
-                      Text("LDN",
+                      Text("NYC",
                           style: Styles.headlineStyle3
                               .copyWith(color: Colors.white))
                     ],
@@ -88,7 +96,7 @@ class _TicketViewState extends State<TicketView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width:100,
+                      width:AppLayout.getWidth(100),
                       child: Text("New-York",style: Styles.headlineStyle4.copyWith(color:Colors.white,
                       ),
                     ),
@@ -96,7 +104,7 @@ class _TicketViewState extends State<TicketView> {
                     ),
                     Text("8H 30M", style: Styles.headlineStyle4.copyWith(color: Colors.white),),
                         SizedBox(
-                      width:100,
+                      width:AppLayout.getWidth(100),
                       child: Text("London",textAlign: TextAlign.end, style: Styles.headlineStyle4.copyWith(color:Colors.white,
                       ),
                     ),
@@ -111,14 +119,14 @@ class _TicketViewState extends State<TicketView> {
             color:Styles.orangeColor ,
            child: Row(
             children: [
-            const  SizedBox(
-                height: 20,
-                width: 10,
+              SizedBox(
+                height: AppLayout.getHeight(20),
+                width: AppLayout.getWidth(10),
                 child: DecoratedBox(decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10)
+                    topRight: Radius.circular(AppLayout.getHeight(10)),
+                    bottomRight: Radius.circular(AppLayout.getHeight(10))
                   )
                 ),),
               ),
@@ -148,14 +156,14 @@ class _TicketViewState extends State<TicketView> {
                 )
                   
                   ),
-               const SizedBox(
-                height: 20,
-                width: 10,
+                SizedBox(
+                height: AppLayout.getHeight(20),
+                width: AppLayout.getWidth(20),
                 child: DecoratedBox(decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10)
+                    topLeft: Radius.circular(AppLayout.getHeight(10)),
+                    bottomLeft: Radius.circular(AppLayout.getHeight(10))
                   )
                 ),),
               ),
@@ -166,8 +174,8 @@ class _TicketViewState extends State<TicketView> {
               decoration: BoxDecoration(
                   color:Styles.orangeColor ,
                   borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(21),
-                      bottomRight: Radius.circular(21))),
+                      bottomLeft: Radius.circular(AppLayout.getHeight(21)),
+                      bottomRight: Radius.circular(AppLayout.getHeight(21)))),
               padding: const EdgeInsets.only(left: 16,top: 19,right: 16,bottom: 16),
             child: Column(
               children: [
@@ -181,7 +189,7 @@ class _TicketViewState extends State<TicketView> {
                         style: Styles.headlineStyle3.copyWith(color: Colors.white),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: AppLayout.getHeight(5),
                         ),
                         Text("Date",
                         style: Styles.headlineStyle4.copyWith(color: Colors.white),)
@@ -193,7 +201,7 @@ class _TicketViewState extends State<TicketView> {
                         Text("8:00 AM",
                         style: Styles.headlineStyle3.copyWith(color: Colors.white),),
                          SizedBox(
-                          height: 5,
+                          height: AppLayout.getHeight(5),
                         ),
                         Text("Departure Time",
                         style: Styles.headlineStyle4.copyWith(color: Colors.white),)
@@ -205,7 +213,7 @@ class _TicketViewState extends State<TicketView> {
                         Text("23",
                         style: Styles.headlineStyle3.copyWith(color: Colors.white),),
                          SizedBox(
-                          height: 5,
+                          height: AppLayout.getHeight(5),
                         ),
                         Text("Number",
                         style: Styles.headlineStyle4.copyWith(color: Colors.white),)
