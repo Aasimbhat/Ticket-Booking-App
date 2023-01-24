@@ -1,4 +1,5 @@
 
+import 'package:booking_app/screens/double_text_widget.dart';
 import 'package:booking_app/screens/hotel_screen.dart';
 import 'package:booking_app/screens/ticket_view.dart';
 import 'package:booking_app/utils/app_info_list.dart';
@@ -72,18 +73,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height:AppLayout.getHeight(40) ,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                  Text("Upcoming Flight",style: Styles.headlineStyle,),
-                  InkWell(
-                    onTap: () {
-                      print("hello");
-                    },      
-                    child: 
-                  Text("View all",style: Styles.textStyle.copyWith(color: Styles.primaryColor)))
-                  ],
-                ),
+                AppDoubleTextWidget(bigText: "Upcoming Flights", smalltext: "View All")
               ],
             ),
           ) ,

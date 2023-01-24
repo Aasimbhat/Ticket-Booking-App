@@ -7,13 +7,11 @@ import 'package:flutter/material.dart';
 
 class TicketView extends StatefulWidget {
 
-  //  final Map<String,dynamic>ticket;
+   final Map<String,dynamic>ticket;
 
-  // const TicketView({Key? key,required this.ticket}) : super(key: key);
+  const TicketView({Key? key,required this.ticket,}) : super(key: key);
   @override
-  final Map<String,dynamic>ticket;
-
-  const TicketView({Key? key,required this.ticket}) : super(key: key);
+ 
   State<TicketView> createState() => _TicketViewState();
 }
 
@@ -31,7 +29,7 @@ class _TicketViewState extends State<TicketView> {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: const Color(0xff526799),
+                  color:  Color(0xff526799),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(AppLayout.getHeight(21)),
                       topRight: Radius.circular(AppLayout.getHeight(21)))),
